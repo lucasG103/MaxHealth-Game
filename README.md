@@ -14,54 +14,52 @@ O projeto está alinhado ao **ODS 3 (Saúde e Bem-Estar)** da Organização das 
 
 ## 🎮 Controles
 
-| Ação | Efeito |
-|---|---|
-| Pular | Desvia de obstáculos e coleta itens no caminho |
-| Agachar | Passa por baixo de obstáculos |
-| Super Pulo | Desvia de obstáculos maiores |
+| Ação    | Efeito                                          |
+| ------- | ------------------------------------------------ |
+| Pular   | Desvia de obstáculos e coleta itens no caminho   |
+| Agachar | Passa por baixo de obstáculos                    |
 
 ## 🧩 Mecânicas principais
 
-- **Coleta (Buffs/Debuffs):**
-  - ✅ Item saudável → recupera vida e ganha experiência
-  - ❌ Item não saudável → perde parte da vida
-  - 🚧 Obstáculo → derrota imediata
-- **Sistema de Combo (Streak):** ao coletar 5 itens saudáveis consecutivos, o jogador ativa a **Habilidade Especial** — vida extra + 5 segundos de invulnerabilidade. Colidir com item ruim zera o contador.
-- **Progressão de dificuldade:** velocidade e densidade de obstáculos aumentam de forma gradual e contínua, sem fases separadas.
+- **Coleta:**
+  * ✅ Item saudável → recupera vida e gera XP
+  * ❌ Item prejudicial → reduz vida
+  * 🚧 Obstáculo → causa derrota imediata, exceto com item de proteção ativo
+- **Progressão:** XP acumulado é convertido em moedas (100 XP = 1 moeda), usadas em uma loja para comprar itens de proteção contra obstáculos (2 itens especiais + 1 item supremo, em balanceamento).
+- **Dificuldade:** velocidade e densidade de obstáculos aumentam de forma gradual e contínua, sem fases separadas.
 
 ## 🖥️ HUD
 
-| Elemento | Função |
-|---|---|
-| Barra de Vida | Vida atual do personagem |
-| Pontuação | Pontos acumulados por distância percorrida |
-| Medidor de Streak | Progresso da sequência de itens saudáveis (0–5) |
+| Elemento      | Função                                     |
+| ------------- | ------------------------------------------- |
+| Barra de Vida | Vida atual do personagem                    |
+| Pontuação     | Pontos acumulados por distância percorrida  |
+| Saldo de Moedas | Moedas disponíveis para compras na loja   |
 
 ## 🛠️ Tecnologias
 
 - **Engine:** Godot Engine (2D, export HTML5/Web)
 - **Arte:** LibreSprite (Pixel Art)
-- **Áudio:** softwares gratuitos de edição de SFX e trilha
+- **Áudio:** BeepBox (trilha), softwares gratuitos de edição para SFX
 - **Versionamento:** GitHub
 
 **Restrições técnicas:** sem orçamento (apenas ferramentas gratuitas), sem servidores externos, APIs ou banco de dados remoto. Suporte apenas para PC/notebook via navegador — sem suporte mobile.
 
 ## 👥 Equipe
 
-| Integrante | Área de atuação | GitHub |
-|---|---|---|
-| Lucas Eduardo da Silva | Produção de áudio, efeitos sonoros e trilha | [@lucasG103](https://github.com/lucasG103) |
-| Vitor Hugo Cardozo de Abreu | Auxiliar de código e sprites | [@vitorcdz](https://github.com/vitorcdz) |
-| Carlos Henrique Yudi Endo | Criação de arte, sprites e animações | [@CarlosHenriqueYudi](https://github.com/CarlosHenriqueYudi) |
-| Davi Daisuke Yazima da Silva | Desenvolvimento de mecânicas e programação | [@Davidayz](https://github.com/Davidayz) |
+| Integrante                   | Função                                                                          | GitHub                                                        |
+| ----------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Lucas Eduardo da Silva        | Designer dos SFXs e responsável pela documentação no Portfólio e GitHub          | [@lucasG103](https://github.com/lucasG103)                     |
+| Vitor Hugo Cardozo de Abreu   | Designer dos Sprites e responsável pela implementação no Godot                   | [@vitorcdz](https://github.com/vitorcdz)                       |
+| Carlos Henrique Yudi Endo     | Direção de Arte e responsável pela otimização de ideias e organização criativa   | [@CarlosHenriqueYudi](https://github.com/CarlosHenriqueYudi)   |
+| Davi Daisuke Yazima da Silva  | Desenvolvedor dos códigos usados no Godot e responsável pela otimização de mecânicas de jogo | [@Davidayz](https://github.com/Davidayz)          |
 
 ## 📄 Documentação
 
-- [Documento de Visão](https://drive.google.com/open?id=1P55dNfXffLzrT_fhFKxq6U83rIqmZphY7b8bVHm8YRM)
-- [Game Design Document (GDD)](https://drive.google.com/open?id=1KXcVsnmSC6GiEwelNoOy_iqgVSG8GcoaAitsA1FVkJ4)
-- [Portfólio completo do projeto](https://sites.google.com/edu.unifil.br/portflio-jogo/página-inicial)
+- [Vision Document](https://github.com/lucasG103/MaxHealth-Game/blob/main/documents/VISION_DOCUMENT.md)
+- [Game Design Document (GDD)](https://github.com/lucasG103/MaxHealth-Game/blob/main/documents/GAME_DESIGN_DOCUMENT.md)
+- [Portfólio completo do projeto](https://sites.google.com/edu.unifil.br/portflio-jogo/p%C3%A1gina-inicial)
 
 ## 🌍 Impacto social
 
 O jogo pode ser utilizado em escolas, projetos sociais e atividades comunitárias como ferramenta de apoio pedagógico. Por ser gratuito e acessível via link, sem necessidade de instalação, busca democratizar o acesso à educação em saúde.
-
