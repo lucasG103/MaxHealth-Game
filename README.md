@@ -14,7 +14,7 @@ O projeto está alinhado ao **ODS 3 (Saúde e Bem-Estar)** da Organização das 
 
 ## 🎮 Controles
 
-| Ação    | Efeito                                          |
+| Ação    | Efeito                                           |
 | ------- | ------------------------------------------------ |
 | Pular   | Desvia de obstáculos e coleta itens no caminho   |
 | Agachar | Passa por baixo de obstáculos                    |
