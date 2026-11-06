@@ -62,5 +62,5 @@ Início da corrida
 
 ## 6. Proposta Pedagógica
 
-O jogo associa, de forma lúdica, hábitos/elementos saudáveis (itens coletáveis e de proteção) a hábitos/elementos prejudiciais (obstáculos e itens negativos), reforçando essa distinção pela repetição, pelo risco imediato e pela recompensa progressiva do sistema de itens e sem depender de texto expositivo dentro da jogabilidade.
+O jogo associa, de forma lúdica, hábitos/elementos saudáveis (itens coletáveis e de proteção) a hábitos/elementos prejudiciais (obstáculos e itens negativos), reforçando essa distinção pela repetição, pelo risco imediato e pela recompensa progressiva do sistema de itens sem depender de texto expositivo dentro da jogabilidade.
 
