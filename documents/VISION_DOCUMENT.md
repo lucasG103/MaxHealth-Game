@@ -59,7 +59,7 @@ Detalhes completos no [Game Design Document](GAME_DESIGN_DOCUMENT.md).
 - **Infraestrutura:** nenhuma dependência de servidor, banco de dados ou serviço externo.
 - **Orçamento:** zero; apenas ferramentas gratuitas (Godot, LibreSprite, BeepBox, GitHub).
 - **Hospedagem:** GitHub Pages (exigência da extensão).
-- **Peso do build:** cerca de 44 MB no total (motor de 35,7 MB e pacote do jogo de 8 MB), mantido enxuto para uso em computadores escolares.
+- **Peso do build:** cerca de 44 MB no total (motor de 35,7 MB e pacote do jogo de 8 MB), mantido enxuto para uso em computadores escolares (ver [Guia de Publicação](GUIA_PUBLICACAO_GITHUB_PAGES.md)).
 
 ## 8. Entregas Finais
 
