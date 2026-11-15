@@ -4,7 +4,7 @@
 
 MaxHealth é um jogo *endless runner* 2D alinhado ao **ODS 3 — Saúde e Bem-Estar** da ONU. O jogador controla um personagem que corre automaticamente por uma rua da cidade, coletando itens saudáveis, evitando itens prejudiciais e desviando de obstáculos.
 
-O projeto integra a Extensão Curricular do curso de Ciência da Computação da UniFil, unindo desenvolvimento de jogos, design de interação e programação a uma proposta de conscientização sobre hábitos de vida. O produto final é um jogo educativo, **gratuito e aberto à comunidade**, jogável diretamente no navegador.
+O projeto integra a Extensão Curricular do curso de Ciência da Computação da UniFil, unindo desenvolvimento de jogos, design de interação e programação a uma proposta de conscientização sobre hábitos de vida. O produto final é um jogo educativo, gratuito e aberto à comunidade, executável diretamente no navegador.
 
 ## 2. Problema
 
@@ -12,13 +12,14 @@ O sedentarismo, a rotina agitada, o uso excessivo de tecnologia e a falta de inf
 
 ## 3. Proposta de Solução
 
-Em vez de comunicar hábitos saudáveis por texto expositivo, o MaxHealth transforma a mensagem em experiência jogável: a cada corrida, o jogador decide em tempo real entre coletar o que fortalece o personagem e desviar do que o prejudica, percebendo a consequência imediatamente na barra de vida, na pontuação e na continuidade da partida.
+Em vez de comunicar hábitos saudáveis por meio de texto expositivo, o MaxHealth transforma a mensagem em experiência jogável. A cada corrida, o jogador decide em tempo real entre coletar o que fortalece o personagem e desviar do que o prejudica, percebendo a consequência imediatamente na barra de vida, na pontuação e na continuidade da partida.
 
-Hábitos viram mecânica:
-- **Escolhas saudáveis** (maçã, água, cenoura) enchem a barra de vida, rendem XP e, ao completar a barra, pontos extras.
-- **Escolhas prejudiciais** (refrigerante, hambúrguer, donut) reduzem a barra; três seguidas, a partir do meio, encerram a corrida.
+Os hábitos se tornam mecânica de jogo:
+
+- **Escolhas saudáveis** (maçã, água e cenoura) aumentam a barra de vida, geram XP e, ao completar a barra, concedem pontos extras.
+- **Escolhas prejudiciais** (refrigerante, hambúrguer e donut) reduzem a barra de vida, e a sequência delas encerra a corrida.
 - **Perigos do caminho** (placas e pombos) exigem atenção e reflexo.
-- **Recompensa progressiva:** o XP vira moeda (100 XP = 1 moeda), usada na loja para comprar itens de proteção: Maçã Dourada, Escudo de Proteção e Relógio do Tempo.
+- **Recompensa progressiva:** o XP é convertido em moedas, utilizadas na loja para adquirir itens de proteção (Maçã Dourada, Escudo de Proteção e Relógio do Tempo).
 
 ## 4. Público-Alvo
 
@@ -28,7 +29,7 @@ Hábitos viram mecânica:
 
 ## 5. Alinhamento com a Extensão e com os ODS
 
-| Diretriz | Como o projeto atende |
+| Diretriz | Atendimento no projeto |
 |---|---|
 | Temática social (ODS) | Saúde e bem-estar (ODS 3) |
 | Framework | Godot Engine 4.6 |
@@ -40,59 +41,59 @@ Hábitos viram mecânica:
 
 ## 6. Mecânicas Centrais
 
-- O personagem corre automaticamente; o jogador pula e desliza para desviar de obstáculos e alcançar itens.
-- **Itens saudáveis:** +10 na barra de vida e +50 XP.
-- **Itens prejudiciais:** −10 na barra de vida.
-- **Obstáculos:** derrota imediata, exceto com item de proteção ativo.
-- **Barra de vida:** começa em 50; chegar a 25 ou menos encerra a partida; chegar a 100 dá +100 pontos e reinicia em 50.
-- **Progressão:** XP convertido em moedas (100 XP = 1 moeda) para comprar itens consumíveis na loja (Maçã Dourada 10, Escudo 25, Relógio 50).
-- **Dificuldade:** velocidade e quantidade de obstáculos crescem gradualmente, sem fases separadas.
-- **Configurações:** volume da música e dos efeitos, salvo no navegador.
-- **HUD:** barra de vida, pontuação, recorde, saldo de moedas e botões de itens.
+- O personagem corre automaticamente, e o jogador pula e desliza para desviar de obstáculos e alcançar itens.
+- Itens saudáveis aumentam a barra de vida e geram XP; itens prejudiciais reduzem a barra de vida.
+- Obstáculos causam derrota imediata, exceto quando há item de proteção ativo.
+- A barra de vida possui zona vermelha, que encerra a partida, e zona verde. Ao ser completada, concede pontos extras e retorna ao ponto médio.
+- O XP acumulado é convertido em moedas para a compra de itens consumíveis na loja.
+- A velocidade e a quantidade de obstáculos aumentam gradualmente, sem fases separadas.
+- A tela de Configurações permite ajustar o volume da música e dos efeitos, com preferência mantida no navegador.
+- A HUD exibe barra de vida, pontuação, recorde, saldo de moedas e botões de itens.
 
-Detalhes completos no [Game Design Document](GAME_DESIGN_DOCUMENT.md).
+Os detalhes completos constam no [Game Design Document](GAME_DESIGN_DOCUMENT.md).
 
 ## 7. Escopo Técnico e Restrições
 
 - **Engine:** Godot Engine 4.6 (2D).
 - **Plataforma:** navegador (HTML5), sem instalação; exclusivo para PC com teclado.
 - **Infraestrutura:** nenhuma dependência de servidor, banco de dados ou serviço externo.
-- **Orçamento:** zero; apenas ferramentas gratuitas (Godot, LibreSprite, BeepBox, GitHub).
-- **Hospedagem:** GitHub Pages (exigência da extensão).
-- **Peso do build:** cerca de 44 MB no total (motor de 35,7 MB e pacote do jogo de 8 MB), mantido enxuto para uso em computadores escolares (ver [Guia de Publicação](GUIA_PUBLICACAO_GITHUB_PAGES.md)).
+- **Orçamento:** nenhum; utilização exclusiva de ferramentas gratuitas (Godot, LibreSprite, BeepBox e GitHub).
+- **Hospedagem:** GitHub Pages, conforme exigência da extensão.
+- **Desempenho:** pacote do jogo mantido enxuto, para uso em computadores escolares.
 
 ## 8. Entregas Finais
 
 - Jogo exportado para Web e hospedado no GitHub Pages, com link direto no portfólio.
 - Repositório público com código-fonte, assets, documentação e build.
-- Portfólio completo e atualizado (documentação, vídeo, relatórios).
+- Portfólio completo e atualizado, com documentação, vídeo e relatórios.
 - Relatório de impacto social.
 - Fotos para divulgação institucional.
-- Ao término do projeto, transferência do repositório para o GitHub da UniFil.
+- Transferência do repositório para o GitHub da UniFil ao término do projeto.
 
 ## 9. Estratégia de Avaliação de Impacto
 
-Como o jogo não pode coletar dados (sem servidor nem serviços externos), o impacto é avaliado fora do jogo:
-- sessões de teste com público-alvo (estudantes, educadores), com observação direta;
+Como o jogo não coleta dados, por não utilizar servidor nem serviços externos, o impacto é avaliado fora do jogo:
+
+- sessões de teste com público-alvo (estudantes e educadores), com observação direta;
 - questionário externo curto, aplicado antes e depois da sessão, sobre percepção do tema e usabilidade;
-- registro das respostas e conclusões no relatório de impacto social, sem dados pessoais.
+- registro das respostas e das conclusões no relatório de impacto social, sem dados pessoais.
 
 ## 10. Critérios de Sucesso
 
 - Mecânicas essenciais implementadas e funcionando sem erros críticos.
-- Navegação completa entre todas as telas: menu → jogo → fim de jogo → (menu | loja) → menu, além das configurações.
+- Navegação completa entre todas as telas: menu, jogo, fim de jogo, loja e configurações.
 - Proposta comunicada de forma clara pela jogabilidade, sem texto explicativo extenso.
-- Jogo acessível online por link direto, carregando em tempo razoável em computadores comuns.
+- Jogo acessível online por link direto, com carregamento em tempo razoável em computadores comuns.
 - Todos os itens de entrega da extensão cumpridos e documentados.
 
 ## 11. Riscos e Mitigações
 
 | Risco | Mitigação |
 |---|---|
-| Build pesado, com carregamento lento em máquinas escolares | Áudio convertido para OGG, assets não usados removidos e ícones reduzidos; conferir o peso a cada exportação |
-| Crescimento do repositório com builds repetidos | Manter o build fora do ramo principal (ramo `gh-pages`) e usar Releases para distribuição |
-| Perda de progresso do jogador (sem salvamento de moedas e itens) | Documentado como limitação; partidas curtas e independentes |
-| Incompatibilidade de navegador | Teste nos navegadores mais comuns antes da entrega final |
+| Pacote pesado, com carregamento lento em máquinas escolares | Áudio em formato compactado, remoção de assets não utilizados e redução de imagens |
+| Crescimento do repositório com builds repetidos | Manutenção do build fora do ramo principal e distribuição por Releases |
+| Perda de progresso do jogador, por ausência de salvamento de moedas e itens | Documentação da limitação; partidas curtas e independentes |
+| Incompatibilidade de navegador | Testes nos navegadores mais comuns antes da entrega final |
 
 ## 12. Equipe
 

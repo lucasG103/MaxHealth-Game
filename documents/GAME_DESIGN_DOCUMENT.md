@@ -1,6 +1,6 @@
 # Game Design Document — MaxHealth
 
-> Documento alinhado à versão final do jogo (build Web, Godot 4.6). Onde há diferença entre uma ideia inicial e o que foi implementado, vale o que está descrito aqui.
+> Documento alinhado à versão atual do jogo (build Web, Godot 4.6). Em caso de divergência com versões anteriores da documentação, prevalece o conteúdo deste documento.
 
 ## 1. Ficha Técnica
 
@@ -44,12 +44,12 @@ Não há texto explicativo durante a partida: a mensagem é transmitida pela pr�
 |---|---|
 | Iniciar a corrida | `Espaço` ou `Enter` |
 | Pular | `Espaço`, `W` ou `↑` |
-| Deslizar (segure) | `S` ou `↓` (o personagem fica deitado por no mínimo 0,35 s, mesmo com toque rápido) |
-| Queda rápida | Segure `S` ou `↓` no ar para voltar ao chão mais depressa |
-| Usar Maçã Dourada / Escudo / Relógio | `1` / `2` / `3` (ou clique nos botões da HUD) |
-| Menus | Mouse (botões); `Esc` volta nas Configurações |
+| Deslizar | `S` ou `↓` (mantida pressionada; o personagem permanece deitado por no mínimo 0,35 s, mesmo em toque rápido) |
+| Queda rápida | `S` ou `↓` pressionada durante o salto, para retornar ao chão mais depressa |
+| Usar Maçã Dourada, Escudo ou Relógio | `1`, `2` e `3` (ou botões da HUD) |
+| Menus | Mouse (botões); `Esc` retorna das Configurações ao menu |
 
-A lista de controles também aparece dentro do jogo, na tela de Configurações.
+A lista de controles também é exibida no jogo, na tela de Configurações.
 
 ## 6. Mecânicas e Regras
 
@@ -80,11 +80,11 @@ A lista de controles também aparece dentro do jogo, na tela de Configurações.
 
 O jogador **ativa** o item antes do perigo (tecla ou botão). Escudo e Maçã Dourada ficam "armados" até serem necessários; o Relógio age imediatamente.
 
-| Item | Preço | Efeito | Observações |
-|---|---|---|---|
-| **Maçã Dourada** | 10 moedas | Reviver: salva o jogador de uma colisão fatal ou de entrar na zona vermelha; a barra volta para 50 | Concede 1,5 s de invulnerabilidade |
-| **Escudo de Proteção** | 25 moedas | Absorve uma colisão com obstáculo e o remove | Concede 1,5 s de invulnerabilidade |
-| **Relógio do Tempo** | 50 moedas | Reduz a velocidade do cenário para 50% por 8 s | A pontuação continua na velocidade normal |
+| Item | Efeito | Observações |
+|---|---|---|
+| **Maçã Dourada** | Reviver: salva o jogador de uma colisão fatal ou de entrar na zona vermelha; a barra volta para 50 | Concede 1,5 s de invulnerabilidade |
+| **Escudo de Proteção** | Absorve uma colisão com obstáculo e o remove | Concede 1,5 s de invulnerabilidade |
+| **Relógio do Tempo** | Reduz a velocidade do cenário para 50% por 8 s | A pontuação continua na velocidade normal |
 
 - São **consumíveis**: cada compra adiciona 1 unidade ao estoque; cada ativação consome 1 unidade.
 - Só um efeito de cada tipo pode estar ativo por vez. Se o Escudo e a Maçã estiverem ativos juntos, o Escudo é consumido primeiro. O personagem muda de animação enquanto um item está ativo.
@@ -102,22 +102,18 @@ O jogador **ativa** o item antes do perigo (tecla ou botão). Escudo e Maçã Do
 | Conceito | Regra |
 |---|---|
 | Pontos | Acumulados pela distância percorrida (pontuação interna ÷ 10), mais bônus de **+100** por barra cheia |
-| Recorde | Maior pontuação da sessão, exibido durante a corrida e no Game Over |
+| Recorde | Maior pontuação da sessão, exibido durante a corrida e na tela de fim de jogo |
 | XP | Gerado **apenas** por itens saudáveis (+50 cada) |
 | Moedas | **100 XP = 1 moeda** (2 itens saudáveis = 1 moeda), convertidas automaticamente durante a corrida |
-| Moedas da partida | Mostradas no Game Over como "Moedas ganhas" |
+| Moedas da partida | Exibidas na tela de fim de jogo como "Moedas ganhas" |
 
-O saldo inicial de moedas é **0**. Moedas, estoque de itens e recorde valem durante a sessão do navegador (não há salvamento desses dados; ver seção 15).
+As moedas são obtidas exclusivamente pela conversão de XP. Moedas, estoque de itens e recorde valem durante a sessão do navegador (não há salvamento desses dados; ver seção 15).
 
 ## 8. Loja
 
-Acessada pelo botão "Abrir Loja" da tela de Game Over (não há atalho no menu inicial). A tela mostra o saldo de moedas, o preço e a quantidade que o jogador já possui de cada item. Os botões de compra ficam desabilitados quando o saldo é insuficiente. O botão "Voltar ao Menu" encerra a visita.
+Acessada pelo botão "Abrir Loja" da tela de fim de jogo (não há atalho no menu inicial). A tela exibe o saldo de moedas e, para cada item, a descrição, o preço em moedas e a quantidade que o jogador já possui. Os botões de compra ficam desabilitados quando o saldo é insuficiente. O botão "Voltar ao Menu" encerra a visita.
 
-| Item | Preço (moedas) |
-|---|---|
-| Maçã Dourada | 10 |
-| Escudo de Proteção | 25 |
-| Relógio do Tempo | 50 |
+Os itens à venda são a Maçã Dourada, o Escudo de Proteção e o Relógio do Tempo.
 
 ## 9. Configurações
 
@@ -149,41 +145,15 @@ flowchart LR
     L -->|Voltar ao Menu| M
 ```
 
-### Wireframes esquemáticos (baixa fidelidade)
+### Wireframes das telas
 
-```
-MENU                         JOGO (HUD)
-+----------------------+     +--------------------------------------+
-|       MAXHEALTH      |     | [==vermelho|=====verde=====]  MOEDAS |
-|                      |     | PONTOS   RECORDE        [1] [2] [3]  |
-|      [ Jogar ]      |     |                                      |
-|   [ Configurações ]  |     |        (aviso temporário)            |
-|      [ Sair ]        |     |   Max ->   item   placa    pombo     |
-+----------------------+     +--------------------------------------+
+![Wireframes das telas e fluxo de navegação](imagens/wireframes_todas_as_telas.png)
 
-FIM DE JOGO                  LOJA
-+----------------------+     +--------------------------------------+
-|     FIM DE JOGO      |     |  MOEDAS: N                           |
-|  PONTOS:   N         |     |  [Maçã]      [Escudo]    [Relógio]   |
-|  RECORDE:  N         |     |  10 moedas   25 moedas   50 moedas   |
-|  MOEDAS GANHAS: +N   |     |  (tem: N)    (tem: N)    (tem: N)    |
-|  [Voltar ao Menu]    |     |           [ Voltar ao Menu ]         |
-|  [Abrir Loja]        |     +--------------------------------------+
-+----------------------+
-
-CONFIGURAÇÕES
-+--------------------------------------+
-|            CONFIGURAÇÕES             |
-|  Volume Música  [=======---]  80%    |
-|  Volume SFX     [=======---]  80%    |
-|  CONTROLES (lista de teclas)         |
-|             [ Voltar ]               |
-+--------------------------------------+
-```
-
-> Esquemas de organização; as capturas das telas reais estão no portfólio do projeto.
+Os wireframes representam a organização dos elementos de cada tela (menu, jogo, fim de jogo, loja e configurações) e o fluxo de navegação entre elas.
 
 ## 12. Estrutura de Cenas do Godot
+
+![Estrutura de cenas do Godot](imagens/estrutura_de_cenas.png)
 
 ```
 Autoload
@@ -211,12 +181,14 @@ res://scripts/
 jogo.gd · menino.gd · hud.gd · game_over.gd · menu.gd · configuracoes.gd · item_coletavel.gd · pombo.gd · dados_jogo.gd
 
 res://audios/
-menu.ogg (menu e configurações) · jogo.ogg (partida) · sfx_bom.wav · sfx_ruim.wav
+menu.ogg (menu e configurações) · jogo.ogg (partida) · efeitos sonoros (.wav)
 ```
 
 ## 13. Casos de Uso
 
 Ator único: **Jogador**.
+
+![Diagrama de caso de uso](imagens/diagrama_caso_de_uso.png)
 
 | ID | Caso de uso | Descrição |
 |---|---|---|
@@ -225,16 +197,18 @@ Ator único: **Jogador**.
 | UC03 | Deslizar | Passa por baixo de elementos altos |
 | UC04 | Coletar item | Colide com item saudável ou prejudicial e altera vida e XP |
 | UC05 | Usar item de proteção | Ativa Maçã Dourada, Escudo ou Relógio (teclas 1 a 3 ou botões) |
-| UC06 | Consultar pontuação e recorde | Acompanha na HUD e no Game Over |
-| UC07 | Acessar a loja | Abre a loja pela tela de Game Over |
+| UC06 | Consultar pontuação e recorde | Acompanha na HUD e na tela de fim de jogo |
+| UC07 | Acessar a loja | Abre a loja pela tela de fim de jogo |
 | UC08 | Comprar item | Troca moedas por unidades de item de proteção |
-| UC09 | Voltar ao menu | A partir do Game Over ou da loja |
+| UC09 | Voltar ao menu | A partir da tela de fim de jogo ou da loja |
 | UC10 | Ajustar volume | Altera volume de música e efeitos na tela de Configurações |
 | UC11 | Sair | Encerra pela opção "Sair" do menu |
 
 ## 14. MVP (versão mínima jogável)
 
-O MVP é o ciclo completo: **menu → corrida → coleta e obstáculos → barra de vida → Game Over → nova partida**, com pontuação e recorde. A loja, os itens de proteção, as configurações de áudio e os efeitos sonoros foram acrescentados sobre esse núcleo.
+![MVP e evolução do jogo](imagens/mvp.png)
+
+O MVP é o ciclo completo: **menu → corrida → coleta e obstáculos → barra de vida → fim de jogo → nova partida**, com pontuação e recorde. A loja, os itens de proteção, as configurações de áudio e os efeitos sonoros foram acrescentados sobre esse núcleo.
 
 ## 15. Requisitos Técnicos, Restrições e Limitações
 
@@ -246,16 +220,14 @@ O MVP é o ciclo completo: **menu → corrida → coleta e obstáculos → barra
 
 **Limitações conhecidas**
 - Moedas, estoque de itens e recorde não são salvos: fechar ou recarregar a página zera esses dados. Apenas os volumes são salvos.
-- Efeitos sonoros apenas para item saudável e item prejudicial; colisão, derrota, uso de item e compra não têm SFX.
-- No navegador, o botão "Sair" tenta fechar a aba e, logo em seguida, troca a página por uma tela em branco (o navegador pode bloquear o fechamento da aba).
 - Sem suporte a celulares e tablets (controles por teclado).
 
 ## 16. Áudio e Arte
 
 - **Arte:** pixel art produzida em LibreSprite (personagem, itens, obstáculos, cenário).
 - **Trilha sonora:** produzida pela equipe, em duas faixas (menu e partida), com repetição contínua.
-- **Efeitos sonoros:** dois efeitos curtos, de coleta de item saudável e de item prejudicial; o volume é controlado nas Configurações.
+- **Efeitos sonoros:** efeitos curtos associados a eventos de jogo; o volume é controlado nas Configurações.
 
 ## 17. Proposta Pedagógica
 
-O jogo associa, de forma lúdica, hábitos saudáveis (itens bons e proteções) a hábitos prejudiciais (itens ruins e obstáculos), reforçando a distinção pela repetição, pelo risco imediato e pela recompensa progressiva do sistema de moedas, sem depender de texto expositivo dentro da jogabilidade. A abordagem se alinha ao **ODS 3 — Saúde e Bem-Estar**.
+O jogo associa, de forma lúdica, hábitos saudáveis (itens bons e proteções) a hábitos prejudiciais (itens ruins e obstáculos), reforçando a distinção pela repetição, pelo risco imediato e pela recompensa progressiva do sistema de moedas, sem depender de texto expositivo dentro da jogabilidade. A abordagem se alinha ao **ODS 3 (Saúde e Bem-Estar)**.
