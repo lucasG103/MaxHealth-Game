@@ -24,22 +24,23 @@ O jogo requer computador com navegador atualizado e teclado. Não há suporte a 
 
 ## Mecânicas principais
 
-- **Itens saudáveis** (maçã, água e cenoura) aumentam a barra de vida e geram XP.
+- **Itens saudáveis** (maçã, brócolis e peso) aumentam a barra de vida e geram XP.
 - **Itens prejudiciais** (refrigerante, hambúrguer e donut) reduzem a barra de vida.
 - **Obstáculos** (placas e pombos) causam derrota imediata, exceto quando há proteção ativa.
 - **Barra de vida:** a partida termina quando a barra atinge a zona vermelha. Ao ser completada, a barra concede pontos extras e retorna ao ponto médio.
 - **Progressão:** o XP acumulado é convertido em moedas, utilizadas na loja para adquirir itens de proteção.
 - **Dificuldade:** a velocidade e a quantidade de obstáculos aumentam de forma gradual e contínua, sem fases separadas.
+- **Sessão de jogo:** moedas, estoque de itens e recorde permanecem durante a sessão do navegador, e os volumes de música e efeitos ficam salvos no navegador.
 
 ### Itens de proteção
 
-| Item | Efeito |
-|---|---|
-| Maçã Dourada | Revive o personagem uma vez, com a barra retornando ao ponto médio |
-| Escudo de Proteção | Absorve uma colisão com obstáculo |
-| Relógio do Tempo | Reduz a velocidade do cenário por alguns segundos |
+| Item | Preço | Efeito |
+|---|---|---|
+| Maçã Dourada | 50 moedas | Revive o personagem uma vez, com a barra retornando ao ponto médio |
+| Escudo de Proteção | 25 moedas | Absorve uma colisão com obstáculo |
+| Relógio do Tempo | 10 moedas | Reduz a velocidade do cenário por alguns segundos |
 
-Os itens são consumíveis, ativados pelo jogador antes do perigo. O preço de cada item, em moedas, é exibido na tela da loja.
+Os itens são consumíveis e ativados pelo jogador antes do perigo.
 
 ## Interface
 
@@ -61,7 +62,7 @@ Menu → Jogo → Fim de jogo → (Menu ou Loja) → Menu. O menu também dá ac
 - **Engine:** Godot Engine 4.6 (2D, exportação HTML5/Web, sem threads)
 - **Arte:** LibreSprite (pixel art)
 - **Áudio:** BeepBox (trilha) e ferramentas gratuitas de edição (efeitos sonoros)
-- **Versionamento e hospedagem:** GitHub e GitHub Pages
+- **Versionamento e publicação:** GitHub, GitHub Pages e Game Store da Computação UniFil
 
 O projeto não possui orçamento e utiliza apenas ferramentas gratuitas. Também não depende de servidores externos, APIs ou banco de dados remoto.
 
@@ -69,11 +70,21 @@ O projeto não possui orçamento e utiliza apenas ferramentas gratuitas. Também
 
 ```
 MaxHealth-Game/
-├── documents/    # Vision Document, Game Design Document e imagens dos diagramas
-├── audio/        # Trilha sonora e efeitos sonoros
-├── sprites/      # Sprites do jogo
+├── project.godot   # Projeto Godot na raiz do repositório
+├── cenas/          # Cenas do jogo (.tscn) e script da loja
+├── scripts/        # Scripts do jogo (GDScript)
+├── IMGS/           # Imagens do jogo (cenário, itens e interface)
+├── personagem/     # Sprites do personagem
+├── audios/         # Áudios utilizados pelo jogo
+├── documents/      # Vision Document, Game Design Document e imagens dos diagramas
+├── audio/          # Fontes das trilhas sonoras e dos efeitos sonoros
+├── sprites/        # Fontes dos sprites
 └── README.md
 ```
+
+## Execução do projeto
+
+O projeto é aberto no Godot Engine 4.6 por meio da importação da raiz do repositório (arquivo `project.godot`) e executado com a tecla F5. A versão Web é gerada pelo preset *Web* do Godot, sem suporte a threads.
 
 ## Equipe
 
@@ -89,11 +100,6 @@ MaxHealth-Game/
 - [Vision Document](documents/VISION_DOCUMENT.md)
 - [Game Design Document (GDD)](documents/GAME_DESIGN_DOCUMENT.md)
 - [Portfólio do projeto](https://sites.google.com/edu.unifil.br/portflio-jogo/p%C3%A1gina-inicial)
-
-## Limitações conhecidas
-
-- Moedas, estoque de itens e recorde não são salvos: valem apenas durante a sessão do navegador. Os volumes de música e efeitos são mantidos.
-- O jogo não possui suporte a celulares e tablets.
 
 ## Impacto social
 

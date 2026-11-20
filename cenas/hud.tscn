@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://d0lfjm3t1eg5i"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_hud"]
+[ext_resource type="Texture2D" path="res://IMGS/maça.png" id="2_maca"]
+[ext_resource type="Texture2D" path="res://IMGS/escudo.png" id="3_escudo"]
+[ext_resource type="Texture2D" path="res://IMGS/Relogio.png" id="4_relogio"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="Raiz" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BarraVida" type="Control" parent="Raiz"]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 12.0
+offset_right = 746.0
+offset_bottom = 42.0
+mouse_filter = 2
+
+[node name="Moldura" type="ColorRect" parent="Raiz/BarraVida"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 343.0
+offset_bottom = 33.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ZonaVermelha" type="ColorRect" parent="Raiz/BarraVida"]
+layout_mode = 0
+offset_right = 85.0
+offset_bottom = 30.0
+mouse_filter = 2
+color = Color(0.9, 0.1, 0.1, 1)
+
+[node name="ZonaVerde" type="ColorRect" parent="Raiz/BarraVida"]
+layout_mode = 0
+offset_left = 85.0
+offset_right = 340.0
+offset_bottom = 30.0
+mouse_filter = 2
+color = Color(0.1, 0.7, 0.2, 1)
+
+[node name="Ponteiro" type="ColorRect" parent="Raiz/BarraVida"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = -7.0
+offset_right = 173.0
+offset_bottom = 37.0
+mouse_filter = 2
+
+[node name="Moedas" type="Label" parent="Raiz"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 58.0
+offset_right = 330.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 28
+text = "MOEDAS: 0"
+
+[node name="Itens" type="HBoxContainer" parent="Raiz"]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 52.0
+offset_right = 746.0
+offset_bottom = 112.0
+theme_override_constants/separation = 14
+
+[node name="BtnItem1" type="Button" parent="Raiz/Itens"]
+custom_minimum_size = Vector2(104, 60)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/icon_max_width = 40
+theme_override_font_sizes/font_size = 18
+text = "[1] x0"
+icon = ExtResource("2_maca")
+
+[node name="BtnItem2" type="Button" parent="Raiz/Itens"]
+custom_minimum_size = Vector2(104, 60)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/icon_max_width = 40
+theme_override_font_sizes/font_size = 18
+text = "[2] x0"
+icon = ExtResource("3_escudo")
+
+[node name="BtnItem3" type="Button" parent="Raiz/Itens"]
+custom_minimum_size = Vector2(104, 60)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/icon_max_width = 40
+theme_override_font_sizes/font_size = 18
+text = "[3] x0"
+icon = ExtResource("4_relogio")
+
+[node name="Aviso" type="Label" parent="Raiz"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 130.0
+offset_bottom = 180.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 38
+text = ""
+horizontal_alignment = 1

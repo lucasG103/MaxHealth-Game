@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://c4nxdsps0mbup"]
+
+[ext_resource type="Script" uid="uid://byw1dresukq8a" path="res://scripts/game_over.gd" id="1_sc4lk"]
+
+[node name="game_over" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_sc4lk")
+
+[node name="Raiz" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="ColorRect" parent="Raiz"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65)
+
+[node name="Centro" type="CenterContainer" parent="Raiz"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Caixa" type="VBoxContainer" parent="Raiz/Centro"]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Titulo" type="Label" parent="Raiz/Centro/Caixa"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "FIM DE JOGO"
+horizontal_alignment = 1
+
+[node name="Pontos" type="Label" parent="Raiz/Centro/Caixa"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "PONTOS: 0"
+horizontal_alignment = 1
+
+[node name="Recorde" type="Label" parent="Raiz/Centro/Caixa"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "RECORDE: 0"
+horizontal_alignment = 1
+
+[node name="Moedas" type="Label" parent="Raiz/Centro/Caixa"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+text = "MOEDAS GANHAS: +0"
+horizontal_alignment = 1
+
+[node name="BotaoMenu" type="Button" parent="Raiz/Centro/Caixa"]
+custom_minimum_size = Vector2(300, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Voltar ao Menu"
+
+[node name="BotaoLoja" type="Button" parent="Raiz/Centro/Caixa"]
+custom_minimum_size = Vector2(300, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Abrir Loja"

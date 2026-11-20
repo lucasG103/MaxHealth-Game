@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cwyvunddu2k22"]
+
+[ext_resource type="PackedScene" uid="uid://dunekchvlilmb" path="res://cenas/parallax_background.tscn" id="1_32vai"]
+[ext_resource type="Script" uid="uid://42nvh3m6l6x8" path="res://scripts/jogo.gd" id="1_dmxwg"]
+[ext_resource type="PackedScene" uid="uid://ckrqrk2a8m0la" path="res://cenas/menino.tscn" id="2_1frua"]
+[ext_resource type="PackedScene" uid="uid://dqmdslx8gdye6" path="res://cenas/chao.tscn" id="3_1frua"]
+[ext_resource type="PackedScene" uid="uid://bq8yyp3qkpdst" path="res://cenas/MSG_INI.tscn" id="4_bkotw"]
+[ext_resource type="AudioStream" uid="uid://dqfpvtcpkvw13" path="res://audios/jogo.ogg" id="6_srya6"]
+[ext_resource type="PackedScene" uid="uid://d0lfjm3t1eg5i" path="res://cenas/hud.tscn" id="8_hud"]
+
+[node name="Node2D" type="Node2D" unique_id=1221314552]
+script = ExtResource("1_dmxwg")
+
+[node name="ParallaxBackground" parent="." unique_id=513268994 instance=ExtResource("1_32vai")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=976527038]
+position = Vector2(579, 325)
+rotation = -6.2831855
+
+[node name="chao" parent="." unique_id=129193520 instance=ExtResource("3_1frua")]
+
+[node name="Menino" parent="." unique_id=1021226078 instance=ExtResource("2_1frua")]
+visibility_layer = 64
+position = Vector2(105, 287)
+scale = Vector2(2, 2)
+
+[node name="MSG_INI" parent="." unique_id=898349817 instance=ExtResource("4_bkotw")]
+
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=841055350]
+stream = ExtResource("6_srya6")
+autoplay = true
+
+[node name="HUD" parent="." unique_id=1706257081 instance=ExtResource("8_hud")]

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b0tbc6gli0eq5"]
+
+[ext_resource type="Script" uid="uid://csoiup75v5q3c" path="res://scripts/menu.gd" id="1_l5xrt"]
+[ext_resource type="Texture2D" uid="uid://cvf0qmqemx7av" path="res://IMGS/menu.jpg" id="2_l5xrt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5xrt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5wjc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qoxbi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Control" type="Control" unique_id=1864098124]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l5xrt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1970147757]
+texture_filter = 1
+scale = Vector2(0.84390515, 0.8424479)
+texture = ExtResource("2_l5xrt")
+centered = false
+
+[node name="play_btn" type="Button" parent="." unique_id=2111194321]
+light_mask = 0
+layout_mode = 0
+offset_left = 394.0
+offset_top = 248.0
+offset_right = 753.0
+offset_bottom = 332.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_l5xrt")
+
+[node name="config_btn" type="Button" parent="." unique_id=326832564]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 344.0
+offset_right = 753.0
+offset_bottom = 428.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_w5wjc")
+
+[node name="quit_btn" type="Button" parent="." unique_id=634920551]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 438.0
+offset_right = 753.0
+offset_bottom = 522.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_qoxbi")

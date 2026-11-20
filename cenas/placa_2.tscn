@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dtld31lelgkj2"]
+
+[ext_resource type="Texture2D" uid="uid://dfyvjss7ki0ve" path="res://IMGS/Placa2.png" id="1_7yssb"]
+
+[node name="Placa2" type="Area2D" unique_id=563900833]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=206554953]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_7yssb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1927502593]
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(-19, -24, -19.5, 14, 18, 32, 18, -5.5)
+
+[node name="Topo" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Topo"]
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(-19, -32, 18, -13.5, 18, -10.5, -19, -29)
+one_way_collision = true

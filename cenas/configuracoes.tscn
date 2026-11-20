@@ -1,0 +1,105 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/configuracoes.gd" id="1_cfg"]
+
+[node name="Configuracoes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cfg")
+
+[node name="Fundo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09, 0.12, 0.2, 1)
+
+[node name="Centro" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Caixa" type="VBoxContainer" parent="Centro"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Titulo" type="Label" parent="Centro/Caixa"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 52
+text = "CONFIGURAÇÕES"
+horizontal_alignment = 1
+
+[node name="LinhaMusica" type="HBoxContainer" parent="Centro/Caixa"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Rotulo" type="Label" parent="Centro/Caixa/LinhaMusica"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Volume Música"
+
+[node name="Slider" type="HSlider" parent="Centro/Caixa/LinhaMusica"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_vertical = 4
+step = 1.0
+value = 80.0
+
+[node name="Valor" type="Label" parent="Centro/Caixa/LinhaMusica"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "80%"
+
+[node name="LinhaSfx" type="HBoxContainer" parent="Centro/Caixa"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Rotulo" type="Label" parent="Centro/Caixa/LinhaSfx"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Volume SFX"
+
+[node name="Slider" type="HSlider" parent="Centro/Caixa/LinhaSfx"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_vertical = 4
+step = 1.0
+value = 80.0
+
+[node name="Valor" type="Label" parent="Centro/Caixa/LinhaSfx"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "80%"
+
+[node name="TituloControles" type="Label" parent="Centro/Caixa"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "CONTROLES"
+horizontal_alignment = 1
+
+[node name="Controles" type="Label" parent="Centro/Caixa"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Pular: ESPAÇO, W ou SETA PARA CIMA\nDeslizar (segure): S ou SETA PARA BAIXO\nUsar itens: teclas 1, 2 e 3 (ou clique nos botões)\nIniciar a partida: ESPAÇO ou ENTER"
+horizontal_alignment = 1
+
+[node name="Voltar" type="Button" parent="Centro/Caixa"]
+custom_minimum_size = Vector2(300, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 26
+text = "Voltar"

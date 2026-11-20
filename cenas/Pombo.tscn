@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bxf1wi7jj5rgc"]
+
+[ext_resource type="Texture2D" uid="uid://r2mk7bfdlyjq" path="res://IMGS/pigeon_fiy-Sheet.png" id="1_qfbxl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o03b5"]
+atlas = ExtResource("1_qfbxl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y7y2"]
+atlas = ExtResource("1_qfbxl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8pj0"]
+atlas = ExtResource("1_qfbxl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1iak"]
+atlas = ExtResource("1_qfbxl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gkxq"]
+atlas = ExtResource("1_qfbxl")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x6ij"]
+atlas = ExtResource("1_qfbxl")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4lux"]
+atlas = ExtResource("1_qfbxl")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w81lf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o03b5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1y7y2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8pj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1iak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gkxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4x6ij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4lux")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o03b5"]
+size = Vector2(30, 28)
+
+[node name="Pombo" type="Area2D" unique_id=229889773]
+texture_filter = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=52171713]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_w81lf")
+autoplay = "default"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1562387553]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_o03b5")

@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://g4wtq5tbxpht"]
+
+[ext_resource type="Script" uid="uid://dvi72t7228y5k" path="res://cenas/loja.gd" id="1_pfxg8"]
+[ext_resource type="Texture2D" uid="uid://bhcw4u5aawcyo" path="res://IMGS/maça.png" id="1_sl1c7"]
+[ext_resource type="Texture2D" uid="uid://ctrvpd1dr82mr" path="res://IMGS/escudo.png" id="2_ixwyd"]
+[ext_resource type="Texture2D" uid="uid://bu5cr4opar0aa" path="res://IMGS/Relogio.png" id="3_uux2s"]
+
+[node name="Loja" type="Control" unique_id=305133165]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pfxg8")
+
+[node name="MoedasLabel" type="Label" parent="." unique_id=1940279633]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 330.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 28
+text = "Moedas:"
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=86321419]
+custom_minimum_size = Vector2(900, 450)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -225.0
+offset_right = 450.0
+offset_bottom = 249.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 40
+columns = 3
+
+[node name="Item1" type="VBoxContainer" parent="GridContainer" unique_id=354239691]
+custom_minimum_size = Vector2(260, 420)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Item1" unique_id=1528168284]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+texture = ExtResource("1_sl1c7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GridContainer/Item1" unique_id=1623825297]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 6
+text = "Maçã Dourada
+
+Use durante a corrida: ao bater em um obstáculo (ou chegar no vermelho da barra) você revive no meio da barra. Consumível."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="GridContainer/Item1" unique_id=159217294]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Comprar (50 Moedas)."
+
+[node name="Item2" type="VBoxContainer" parent="GridContainer" unique_id=256703791]
+custom_minimum_size = Vector2(260, 420)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Item2" unique_id=2052228359]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+texture = ExtResource("2_ixwyd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GridContainer/Item2" unique_id=1034370746]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 6
+text = "Escudo de Proteção
+
+Use durante a corrida: protege da próxima colisão com um obstáculo. Consumível."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="GridContainer/Item2" unique_id=298060202]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Comprar (25 Moedas)."
+
+[node name="Item3" type="VBoxContainer" parent="GridContainer" unique_id=598815282]
+custom_minimum_size = Vector2(260, 420)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Item3" unique_id=636457512]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+texture = ExtResource("3_uux2s")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GridContainer/Item3" unique_id=1604174464]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 6
+text = "Relógio do Tempo
+
+Use durante a corrida: desacelera o jogo por alguns segundos, facilitando desviar dos obstáculos. Consumível."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="GridContainer/Item3" unique_id=1853381994]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Comprar (10 Moedas)."
+
+[node name="BotaoVoltar" type="Button" parent="." unique_id=662951112]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -137.0
+offset_top = -50.0
+offset_right = 137.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Sair"
+icon_alignment = 2
